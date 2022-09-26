@@ -1,0 +1,14 @@
+\contentsline {title}{Lab Report: Speed of light}{1}{section*.1}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.2}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}Introduction}{1}{section*.3}%
+\contentsline {subsection}{\numberline {A}History}{1}{section*.4}%
+\contentsline {subsection}{\numberline {B}Theory}{1}{section*.5}%
+\contentsline {subsubsection}{\numberline {1}Deriving the speed of light from Maxwell`s equations}{1}{section*.6}%
+\contentsline {section}{\numberline {II}Procedure}{1}{section*.7}%
+\contentsline {section}{\numberline {III}Results}{1}{section*.8}%
+\contentsline {section}{\numberline {IV}Discussion}{1}{section*.9}%
+\contentsline {section}{\numberline {V}Conclusion}{1}{section*.10}%
+\appendix 
+\contentsline {section}{\numberline {}References}{1}{section*.11}%

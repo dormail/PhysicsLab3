@@ -1,0 +1,47 @@
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{History}
+\label{sec:history}
+
+\subsection{Theory}
+\label{sec:theory}
+
+\subsubsection{Deriving the speed of light from Maxwell`s equations}
+The speed of light as a fundamental constant can be derived from Maxwell`s equations
+\cite{Griffiths:1492149}
+\begin{equation}
+  \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}, \quad
+  \nabla \times \mathbf{B} = \mu_\text{abs} \epsilon_\text{abs} 
+                              \frac{\partial \mathbf E}{\partial t} .
+\end{equation}
+where $\mu_\text{abs}$ and $\epsilon_\text{abs}$ are the absolute permeability and permittivity of
+the medium. They can be related to the relative and vacuum constant for each size like
+\begin{align}
+  \epsilon_\text{abs} &= \varepsilon \varepsilon_0, \\
+  \mu_\text{abs} &= \mu_r \mu_0.
+\end{align}
+In these equations $\varepsilon_0$ is called the vacuum permittivity and $\varepsilon$ is a
+medium-specific \textit{relative permittivity}. In a similar fashion, $\mu_0$ is the vacuum
+permeability and $\mu_r$ the \textit{relative permeability}.
+
+By taking the first time derivative of either equation and plugging the result into the other, one
+can get a wave equation after the double curl has been reduced to a laplace operator. From the wave
+equation a speed of light of
+\begin{equation}
+  c = \frac{1}{\sqrt{\varepsilon \varepsilon_0 \mu_0 \mu_r}}.
+\end{equation}
+
+Since $\varepsilon_0$ and $\mu_0$ are physical constants they can be measured and their values are
+well known to be \cite{muzero,epsilonzero}
+\begin{equation}
+  \varepsilon_0 = \SI{8.854e-12}{Fm^{-1}}, \quad
+  \mu_0 = \SI{1.256e-6}{NA^{-2}}.
+\end{equation}
+
+With the relative permeability and relative permittivity of a medium we can define the
+\text{refractive index}
+\[
+  n = \sqrt{\varepsilon \mu_r}.
+\]
+$n$ depends, like $\mu_r$, on the frequency of the light because of dispersion.
