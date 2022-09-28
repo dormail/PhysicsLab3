@@ -8,8 +8,8 @@ instructions and has been modified to the actual procedure in the lab.
 \begin{figure*}
     \centering
     \includegraphics[width=0.8\textwidth]{media/Setup Air.png}
-    \caption{Diagram of the experimental set-up for measuring the velocity of light in air
-              \cite{LabInstructions}.}
+    \caption{Diagram of the experimental set-up for measuring the velocity of light in air. Taken
+      from the instructions given for this experiment \cite{LabInstructions}.}
     \label{fig:SetupAir}
 \end{figure*}
 To measure the speed of light in air, a setup as shown in \autoref{fig:SetupAir} is used. A source
@@ -42,4 +42,33 @@ we can conclude that
   \label{eqn:speedoflight}
 \end{equation}
 
+\subsection{Measuring the speed of light in resin}
+\label{sec:MeasuringResin}
+To measure the speed of light in resin $c_M$, the same operating unit as in \autoref{sec:measuring} is
+used. This time however, a block of synthetic resin of length $l_M$ is put in one ligth beam between
+operating unit and mirror.
+
+Afterwards, the block gets removed and the distance between the mirror and operating unit gets
+increased by $\Delta x$, such that the phase is the same as it was in the first step.
+
+From these two steps we can compute the speed of light in resin by seeing that for the first step
+\begin{align}
+  l_1 &= 2 x_1 \\
+  t_1 &= \frac{1}{c_L} (l_1 - l_M) + \frac{l_M}{c_M}
+\end{align}
+and in the second step the distance and time difference are
+\begin{align}
+  l_2 &= l_1 + 2\Delta x \\
+  t_2 &= \frac{1}{c_L} (l_1 + 2 \Delta x).
+\end{align}
+In these expressions the speed of light in air $c_L$ is assumed to be known. In this epxeriment we
+use the result from \autoref{sec:measuring} as a speed of ligth in air as the refractive index of air
+is known to be close to 1 \cite{refractiveIndex}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{media/Setup Resin.png}
+    \caption{Measuring the velocity of light in other media. Taken
+      from the instructions given for this experiment \cite{LabInstructions}.}
+    \label{fig:SetupResin}
+\end{figure}
 
