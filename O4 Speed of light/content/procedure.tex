@@ -13,7 +13,7 @@ instructions and has been modified to the actual procedure in the lab.
     \label{fig:SetupAir}
 \end{figure*}
 To measure the speed of light in air, a setup as shown in \autoref{fig:SetupAir} is used. A source
-of modulated light and a detector is sending a light pulse towards a mirror setup where it gets
+is sending a pulse of modulated light towards a mirror setup where it gets
 reflected to the detector unit. An oscilloscope attached to the operating unit shows a Lissajous
 figure corresponing to the phase difference between sent light and received signal.
 
@@ -26,7 +26,7 @@ resulting in an extra light path
   \Delta l = 2 \Delta x.
 \]
 $\Delta x$ is chosen such that a phase change of $\pi / 2$ is added. The originally intended $\pi$
-were not possible as the light source lost its definition after $\Delta x \gtrapprox \SI{1}{m}$).
+were not possible as the light source lost its definition after $\Delta x \gtrapprox \SI{1}{m}$.
 
 To travel the distance $\Delta l$, light needs the time
 \[
@@ -54,16 +54,30 @@ increased by $\Delta x$, such that the phase is the same as it was in the first 
 From these two steps we can compute the speed of light in resin by seeing that for the first step
 \begin{align}
   l_1 &= 2 x_1 \\
-  t_1 &= \frac{1}{c_L} (l_1 - l_M) + \frac{l_M}{c_M}
+  t_1 &= \frac{1}{c_\text{Air}} (l_1 - l_M) + \frac{l_M}{c_M}
 \end{align}
 and in the second step the distance and time difference are
 \begin{align}
   l_2 &= l_1 + 2\Delta x \\
-  t_2 &= \frac{1}{c_L} (l_1 + 2 \Delta x).
+  t_2 &= \frac{1}{c_\text{Air}} (l_1 + 2 \Delta x).
 \end{align}
-In these expressions the speed of light in air $c_L$ is assumed to be known. In this epxeriment we
-use the result from \autoref{sec:measuring} as a speed of ligth in air as the refractive index of air
-is known to be close to 1 \cite{refractiveIndex}.
+In these expressions the speed of light in air $c_\text{Air}$ is assumed to be known. For the calculation
+we
+use the result from \autoref{sec:measuring} as a speed of ligth in air.
+
+Since in both cases the phase is the same, the travels times have to fullfill 
+\[
+  t_1 = t_2 + \frac{k}{f}
+\]
+with $k\in\mathbb{N}$. One can rearrange the equations to obtain the refractive index
+\begin{equation}
+  n = 1 + \frac{2 \Delta x}{l_M} + \frac{k c_\text{Air}}{f l_M}.
+\end{equation}
+The speed of light in resin can then be computed with the formula
+\begin{equation}
+  c_M = \frac{c_\text{Air}}{n}.
+\end{equation}
+
 \begin{figure}
     \centering
     \includegraphics[width=0.4\textwidth]{media/Setup Resin.png}
