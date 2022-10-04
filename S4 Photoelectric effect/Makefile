@@ -1,6 +1,11 @@
 all: build/main.pdf
 
 
+build/photocurrent_incorrect.pdf: analysis_own_measurement.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python3 analysis_own_measurement.py  
+
+build/main.pdf: build/photocurrent_incorrect.pdf
+
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
