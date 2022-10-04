@@ -1,7 +1,7 @@
 \section{Introduction}
 \label{sec:introduction}
 The following section is based on my old report about the photoelectric effect, which in turn is
-based on the experimental manual for the lab given out by TU Dortmund University. Unfortunately,
+based on the experimental manual for the lab given out by TU Dortmund University \cite{V500}. Unfortunately,
 both of these are only available in German.
 
 \subsection{Physical theories of light}
@@ -26,6 +26,40 @@ The photoelectric effect is commonly referred to electrons being emitted from me
 irradiated with light. The first qualitative description has been done by Einstein in 1905
 \cite{https://doi.org/10.1002/andp.19053220607}, which also interpreted light as discrete energy
 packets.
+
+The experimental setup is shown in \autoref{fig:ExpSetup} and will be explained more thoroughly in
+\autoref{sec:procedure}. As a centerpiece there is the photocell, which consists of the vacuum
+chamber, a sample and the collector. When a light source is pointed to the sample, a stream of
+electrons can be measured as a current between these two. The key features of this current are:
+\begin{itemize}
+  \item The current is proportional to the intensity of the light source,
+  \item the energy of a single electron is proportional to the frequency of the light and
+    independent of the frequency,
+  \item below a specific frequency there is no photoeffect, i.e. no current between sample and
+    collector.
+\end{itemize}
+While the wave model fails to explain the \nth{3} observation, interpreting light as distinct
+packages with energy
+\begin{equation}
+  E = h\nu,
+  \label{eqn:PhotonEnergy}
+\end{equation}
+can easily explain why there is no photoelectric effect below a specific frequency.
+In \autoref{eqn:PhotonEnergy} $h$ refers to the Planck constant and $\nu$ to the frequency of
+light.
+
+Assuming that an electron is bound to the atom with an energy $E_\text{b}$ and has kinetic energy
+$E_\text{kin}$ after being emitted, energy conservation provides
+\begin{equation}
+    h\nu = E_\text{b} + E_\text{kin}.
+    \label{eqn:EnergyConservation}
+\end{equation}
+From there we can deduct 
+\[
+  h\nu > E_\text{b}
+\]
+which directly leads to the third observation. Assuming that an electron interacts with one photon
+only, the other two observations become clear as well.
 
 \begin{figure}
     \centering
