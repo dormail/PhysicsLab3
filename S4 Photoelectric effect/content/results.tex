@@ -3,8 +3,9 @@
 
 \subsection{Measurements taken by our group}
 The data that our group measured is listed in \autoref{tab:results_own} and plotted in
-\autoref{fig:photocurrent_own}. While the data for $U>0$ looks similar to ???, the data points show
-a linear behavior in the negative regime.
+\autoref{fig:photocurrent}. While the data for $V_C>0$ looks similar to
+\autoref{fig:intr:photocurrent}, the data points show
+a linear behavior in the negative regime for $V_C$.
 
 To show the linear relation ship, a function of the form
 \[
@@ -17,19 +18,19 @@ To fit the function the curve\_fit from scipy.optimize has been used. It lead to
   b &= (299.4 \pm 0.6) \, \si{\pico\ampere}.
 \end{align}
 Relative uncertainty for the linear correlation is $1.1\%$, which strongly disagrees with the
-expected behavior as shown in \autoref{fig:expected_curve}. The fit-function has been plotted in
-\autoref{fig:photocurrent_own} as well.
+expected behavior as shown in \autoref{fig:intr:photocurrent}. The fit-function has been plotted in
+\autoref{fig:photocurrent} as well.
 
 % Results from our measurement
 \begin{table*}
   \centering
   \caption{Results from self-performed measurement for each run. Computed values for
     average, standart deviation and relative
-  uncertainty. For the first run there are no results for $U\geq\SI{28}{V}$ because of human error.}
+  uncertainty. For the first run there are no results for $U_C\geq\SI{28}{V}$ because of human error.}
   \label{tab:results_own}
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c c c c c}
-    $U / \si{V}$ &
+    $V_\text{C} / \si{V}$ &
     $I / \si{pA}$ \nth{1} run &
     $I / \si{pA}$ \nth{2} run &
     $I / \si{pA}$ \nth{3} run &
@@ -108,6 +109,6 @@ expected behavior as shown in \autoref{fig:expected_curve}. The fit-function has
   \includegraphics{build/photocurrent.pdf}
   \caption{Photo current for varying external voltages between sample and collector. Measurements taken by 
   our own group are plotted in black, note the linear relation between current and voltage for
-  $U<0$. The data given to us by the TA is plotted in blue without uncertainties.}
+  $V_C<0$. The data given to us by the TA is plotted in blue without uncertainties.}
   \label{fig:photocurrent}
 \end{figure*}

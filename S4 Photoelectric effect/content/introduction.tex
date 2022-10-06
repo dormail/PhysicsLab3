@@ -65,7 +65,41 @@ only, the other two observations become clear as well.
 \begin{figure}
     \centering
     \includegraphics[width=0.4\textwidth]{media/ExperimentalSetup.png}
-    \caption{Experimental Setup}
+    \caption{Experimental Setup, taken from the lab manual \cite{LabInstructions}.}
     \label{fig:ExpSetup}
 \end{figure}
 
+\subsection{Collector Voltage}
+\label{sec:colletor_voltage}
+Since the only controllable variable in \autoref{eqn:EnergyConservation} is the frequency of light,
+we will modify the setup and introduce an electric potential between sample and collector
+$V_\text{C}$.
+With this external field the energy equation now reads
+\begin{equation}
+  h\nu = E_\text{b} + E_\text{kin} + V_\text{C} e
+  \label{eqn:energy_modified}
+\end{equation}
+where $e$ is the elementary charge of an electron.
+
+\subsection{Fermi-Dirac Distribution}
+\label{sec:intr:fermi-dirac}
+One oversimplification in \autoref{sec:intr:photoeffect} has been assuming the same energy for every
+electron. Since electrons are fermions the energy distribution is given by the
+\textit{Fermi-Dirac-Distribution}
+\begin{equation}
+  \overline{n}_i = \frac{1}{e^{(\epsilon_i - \mu) / k_BT} + 1}.
+\end{equation}
+Here $\overline{n}_i$ describes the expectation value for the number of electrons in a state with
+energy $\epsilon_i$. Key features of the Fermi-Dirac-Distribution are, that while low-energy states
+get preferred, higher energy states have non-zero expectation values, which reduces the binding
+energy in \autoref{eqn:EnergyConservation}. 
+
+Therefore, one does not expect an immediate jump in the photocurrent when the collector voltage is
+hig enough but a rather smooth curve as shown in \autoref{fig:intr:photocurrent}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{media/photocurrent.png}
+    \caption{Photoelectric current vs. Collector voltage, taken from the lab manual \cite{LabInstructions}.}
+    \label{fig:intr:photocurrent}
+\end{figure}
