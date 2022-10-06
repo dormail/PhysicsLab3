@@ -52,11 +52,27 @@ b_u = ufloat(b, b_err)
 print(f'm = {m_u}')
 print(f'b = {b_u}')
 
+# import ta data
+data = pd.read_csv('data/data_ta.csv')
+data['current (nA)'] *= 1000 # conversion to pA
+data_np = data.to_numpy()
+U_ta = data_np[:,0]
+A_ta = data_np[:,1] 
+
+# output as tex table 
+data.to_csv('build/ta_data.tex',
+            sep='&',
+            float_format="%.2f",
+            header=False,
+            index=False,
+            decimal='.',
+            line_terminator=' \\\\\n')
+
 # plotting
 plt.clf()
 plt.errorbar(U, current_average, xerr=np.ones_like(U)*.5, yerr=current_std, 
             ls='None',
-            label='Measurement data',
+            label='Our measurement data',
              color='k')
 
 plt.plot(U_red, linear(U_red, m, b),
@@ -64,8 +80,12 @@ plt.plot(U_red, linear(U_red, m, b),
          alpha=1,
          label=rf'linear curve fit for $U<0$')
 
+plt.scatter(U_ta,A_ta,
+           marker='+',
+            label='TA data')
+
 plt.ylabel('Photo current / pA')
 plt.xlabel(r'Accelerating voltage / V')
 plt.tight_layout()
 plt.legend()
-plt.savefig('build/photocurrent_incorrect.pdf')
+plt.savefig('build/photocurrent.pdf')
