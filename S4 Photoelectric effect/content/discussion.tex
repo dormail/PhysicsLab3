@@ -1,2 +1,30 @@
 \section{Discussion}
 \label{sec:discussion}
+A qualitative analysis based on \autoref{fig:photocurrent} yields the following results:
+\begin{itemize}
+  \item Our data shows linear behavior in the negative regime,
+  \item the positive range behaves as expected from \autoref{fig:intr:photocurrent},
+  \item in the range $[0, \SI{10}{V}]$ our results only show a small deviation form the
+    data given to us,
+  \item while our measurements show small relative uncertainties below $5\%$, the measurements in the
+    negative regime disagree with each other and have high relative uncertainty of up to $8.96\%$.
+\end{itemize}
+Especially the different behavior for $V_\text{C}<0$ and $V_\text{C}>0$ is an interesting feature
+which we would like to explore in this discussion.
+
+A probable source of error is mishandling or malfunctioning operating units. The software
+controlling the photocell turned out to be rather unintuitive and sometimes gave errors
+mid-measurement.
+
+Futhermore, since we did not assemble the setup ourselves a mistake in the preperation can not be
+excluded either. These mistakes can effect the UV light, spacing between sample and collector or the
+electronic connections connecting them. The components mentioned and their quality have strong impact
+on the measurement and can lead to difference between an accelerating current and deccelerating
+current, which is what we observed.
+
+A further source of error was the reading of the photo current. After changing $V_\text{C}$, the
+photo current changed as well, but showed ``relaxing`` behavior, going back towards the value which
+it had before adjusting the voltage. For consistency we took the first value readable after setting
+$V_\text{C}$. Even with this strategy it was hard to reproduce our own results and the short time
+frame to read values is prone to human error.
+
