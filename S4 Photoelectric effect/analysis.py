@@ -78,14 +78,14 @@ plt.errorbar(U, current_average, xerr=np.ones_like(U)*.5, yerr=current_std,
 plt.plot(U_red, linear(U_red, m, b),
          c='r',
          alpha=1,
-         label=r'linear curve fit for $U_\text{C}<0$')
+         label=r'linear curve fit for $V_\text{C}<0$')
 
 plt.scatter(U_ta,A_ta,
            marker='+',
             label='TA data')
 
 plt.ylabel('Photo current / pA')
-plt.xlabel(r'Accelerating voltage $U_\text{C}/$ V')
+plt.xlabel(r'Accelerating voltage $V_\text{C}/$ V')
 plt.tight_layout()
 plt.legend()
 plt.savefig('build/photocurrent.pdf')
