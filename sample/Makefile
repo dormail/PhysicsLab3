@@ -1,5 +1,12 @@
 all: build/main.pdf
 
+# Sample on how to include python scripts
+#build/photocurrent.pdf: analysis.py matplotlibrc header-matplotlib.tex | build
+#        TEXINPUTS=$$(pwd): python3 analysis.py  
+#
+#build/main.pdf: build/photocurrent.pdf
+
+
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
