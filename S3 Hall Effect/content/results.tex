@@ -1,2 +1,86 @@
 \section{Results}
 \label{sec:results}
+
+\subsection{Hall voltage as a function of current}
+\label{sec:res-a}
+According to \autoref{eqn:intr:U_H}, we expect a linear behavior for the Hall voltage $U_\text{H}$ 
+when the current $I$ flowing through the sample is varied. Furthermore, there is also linear
+dependence on the magnetic field, which in turn is proportional to the current flowing through the
+coils. In this section the results of \autoref{sec:procedure:a} shall be presented.
+
+For each run we create a linear regression line according to the formula
+\begin{equation}
+  f(x; m, b) = m\cdot x + b
+\end{equation}
+where $m$ and $b$ are variable parameters. The function will be fitted to each data line using
+scipy.optimize. For the three cases n-dotted, p-dotted, non-dotted we did three runs with three
+different magnetic field strengths, giving nine combinations. These will be listed in the folowing.
+
+For the n-dotted we got
+\begin{align*}
+  \SI{3}{A} \quad m &= (-0.0406 \pm 0.0032) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.00061 \pm 0.00008) \si{V} \\
+  \SI{4}{A} \quad m &= (-0.2343 \pm 0.0032) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.00055 \pm 0.00008) \si{V} \\
+  \SI{5}{A} \quad m &= (-0.4100 \pm 0.0032) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.00053 \pm 0.00008) \si{V}.
+\end{align*}
+For the p-dotted
+\begin{align*}
+  \SI{3}{A} \quad m &= (0.9227 \pm 0.0016) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.000367 \pm 0.000035) \si{V} \\
+  \SI{4}{A} \quad m &= (1.1921 \pm 0.0016) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.000387 \pm 0.000035) \si{V} \\
+  \SI{5}{A} \quad m &= (1.4336 \pm 0.0016) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.000370 \pm 0.000035) \si{V}.
+\end{align*}
+For the undotted case
+\begin{align*}
+  \SI{3}{A} \quad m &= (-0.006 \pm 0.021) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.00075 \pm 0.00022) \si{V} \\
+  \SI{4}{A} \quad m &= (-0.004 \pm 0.021) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.00078 \pm 0.00022) \si{V} \\
+  \SI{5}{A} \quad m &= (-0.012 \pm 0.021) \frac{\text{V}}{\text{A}} \\
+                  b &= (-0.00075 \pm 0.00022) \si{V}.
+\end{align*}
+The measured data and the linear regressions are shown in \autoref{fig:res-a}.
+
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{build/V-A-n.pdf}
+         \caption{n-dotted medium}
+         \label{fig:a-n}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{build/V-A-p.pdf}
+         \caption{p-dotted medium}
+         \label{fig:a-p}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{build/V-A-e.pdf}
+         \caption{undotted medium}
+         \label{fig:a-e}
+     \end{subfigure}
+        \caption{Hall Voltage as a function of current flowing through sample. For three different
+        magnetic field strengths indicated by the coil voltages. Note that different scales for the
+      different graphs are being used.}
+        \label{fig:res-a}
+\end{figure}
+
+\subsection{Hall voltage as a function of the magnetic field}
+\label{sec:res-b}
+
+\begin{figure}
+     \centering
+         \includegraphics[width=.4\textwidth]{build/V-B.pdf}
+        \caption{Hall Voltage as a function of current flowing through sample. For three different
+        magnetic field strengths indicated by the coil voltages. Note that different scales for the
+      different graphs are being used.}
+        \label{fig:res-b}
+\end{figure}
