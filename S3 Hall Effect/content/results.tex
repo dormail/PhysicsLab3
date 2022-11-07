@@ -75,12 +75,17 @@ The measured data and the linear regressions are shown in \autoref{fig:res-a}.
 
 \subsection{Hall voltage as a function of the magnetic field}
 \label{sec:res-b}
+In this part we show the result when measuring the dependence between the Hall voltage and the
+magnetic field. We performed three runs for each dotting to smoothen the results, which are shown 
+in \autoref{fig:res-b}. 
+
+Since there were to many data points for a curve fit, the linear regression function from scipy has
+been used in this part.
 
 \begin{figure}
      \centering
          \includegraphics[width=.4\textwidth]{build/V-B.pdf}
-        \caption{Hall Voltage as a function of current flowing through sample. For three different
-        magnetic field strengths indicated by the coil voltages. Note that different scales for the
-      different graphs are being used.}
+        \caption{Hall Voltage as a function of the applied magnetic field, for n-dotted, p-dotted
+        and undotted Germanium.}
         \label{fig:res-b}
 \end{figure}

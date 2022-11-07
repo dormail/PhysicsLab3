@@ -4,7 +4,11 @@ all: build/main.pdf
 build/V-A-n.pdf: plot_a.py matplotlibrc header-matplotlib.tex | build
         TEXINPUTS=$(pwd): python3 plot_a.py  
 
+build/V-B.pdf: plot_b.py matplotlibrc header-matplotlib.tex | build
+        TEXINPUTS=$(pwd): python3 plot_b.py  
+
 build/main.pdf: build/V-A-n.pdf
+build/main.pdf: build/V-B.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \

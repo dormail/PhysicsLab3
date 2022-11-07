@@ -1,2 +1,37 @@
 \section{Discussion}
 \label{sec:discussion}
+While the results all show the key features, the qualitative analysis shows some errors. The
+qualitative features are
+\begin{itemize}
+  \item the linear dependence between magnetic field and Hall voltage,
+  \item the linear dependence between sample current and Hall voltage,
+  \item the polarization of $U_\text{H}$ depending on the charge of the charge carriers.
+\end{itemize}
+While for each individual measurement the linear dependecies are correct, as shown by small
+relative uncertainties in the linear regressions which are all below $10\%$ except for the undotted
+case. The undotted case shows a constant zero and is essentially noise, so uncertainties can be
+higher.
+
+Where the linear dependence is broken how ever, is when comparing different magnetic field in
+\autoref{sec:res-a}. While the slope $m$ should be proportional to the field strength $B$, the
+ratio between different slopes is not close to the ratio between field strength. An example
+calculation for the n-dotted measurement:
+\begin{equation}
+  \frac{m(\SI{5}{A})}{m(\SI{4}{A})} = \frac{0.41}{0.2343} \approx 1.75 > \frac{5}{4} = 1.25
+\end{equation}
+However the ratio is closer to the theoretical value for the p-dotted sample:
+\begin{equation}
+  \frac{m(\SI{5}{A})}{m(\SI{4}{A})} = \frac{1.4336}{1.1921} \approx 1.203
+\end{equation}
+Especially the $\SI{3}{A}$ measurement for the n-dotted Germanium shows a suspicously low slope.
+
+A large source for error is electornic noise. For the undotted Germanium, where you would expect no
+Hall effect, voltages of over $\SI{0.003}{V}$ have been measured, which corresponds to more than
+$10\%$ of the absolute values measured in the other runs. 
+
+This uncertainty explains the large deviation from the expected slope with low currents. Because the
+Hall voltage is low, the noise make it even harder to determine a voltage from the background,
+artificially lowering the slope.
+
+This error can be mittigated with more sophisticated compensation and better shielding of cables.
+

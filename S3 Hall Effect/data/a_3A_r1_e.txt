@@ -1,8 +1,8 @@
-﻿MIN=0	-0.1	-0.3
-MAX=56.5685424949238	0.1	0.3
-SCALE=10	0.05	0.1
-DEC=1	4	4
-DEF="Time" t / s	"Current" I_A1 / A	"Voltage" U_B1 / V
+EMpyt 1
+EMpyt 2
+EMpyt 3
+EMpyt 4
+﻿"Time" t / s	"Current" I_A1 / A	"Voltage" U_B1 / V
 0	-0.0022	-0.0018
 0.09	-0.0022	0.00015
 0.2	-0.00225	-0.00255
