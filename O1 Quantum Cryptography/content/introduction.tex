@@ -1,3 +1,74 @@
 \section{Introduction}
 \label{sec:introduction}
+In this report we will present an optical approach to quantum key distribution, where the BB84
+protocol is reproduced using photon polarization states. \label{sec:BB84} will give a short overview
+over the key exchange scheme and \autoref{sec:procedure} will contain the setup which we will use to
+test the protocol. Lastly, \autoref{sec:results} will show our results, including the encyption
+step.
+
+\subsection{The BB84 protocol}
+\label{sec:BB84}
+The BB84 is a quantum key distribution protocol which two different bases for a two level quantum
+system, to make interception by a third party impossible due to the \textit{no cloning theorem}.
+Necessary for the protocol is an authenticated channel between the parties.
+
+The two bases are not uniquely defined, however we use the two bases
+\begin{align}
+  S_z = \{ \ket{0}, \ket{1} \} \qquad
+  S_x = \{ \ket{+}, \ket{-} \},
+\end{align}
+with the superposition states
+\begin{align}
+  \ket{+} = \frac{\ket{0} + \ket{1}}{\sqrt{2}} \qquad
+  \ket{-} = \frac{\ket{0} - \ket{1}}{\sqrt{2}}.
+\end{align}
+These can be directly mapped to the polarization states of photons, where a conversion between these
+to are rotations along the propagation axis. The operation mapping these basis towards each other is
+commonly refered to as the \textit{Hadamard matrix}
+\begin{equation}
+  H = \frac{1}{\sqrt{2}}
+  \begin{pmatrix}
+    1 & 1 \\
+    1 & -1 
+  \end{pmatrix}.
+\end{equation}
+In this notation the $\ket{0}$ state is denoted as the first entry, $\ket{1}$ as the second entry of
+a 2-vector. The same transformation can be realized through a $45^\circ$ rotation on the
+polarization.
+
+To send a key, between to parties A and B, the first party generates a sequence of $N$ bits
+and chooses a basis to decode each bit, both being random. This generates a list consisting of
+tuples. As an example for $N=5$:
+\begin{align*}
+  I_A = \{ (\text{bit}_i, \text{basis}_i \}
+    = \{ &(1, S_x) \\
+         &(0, S_z) \\
+         &(1, S_z) \\
+         &(0, S_x) \\
+         &(1, S_z) \}
+\end{align*}
+These are sent accordingly to party B, which measures them in a random basis as well. If the basis
+matches, B`s measurement should give the same result as what A, encoded. For different bases, the
+result will be random. A possible set of bases and measured bits reads
+\begin{align*}
+  I_B
+    = \{ &(1, \textcolor{green}{S_x}) \\
+         &(1, \textcolor{red}{S_x}) \\
+         &(1, \textcolor{green}{S_z}) \\
+         &(0, \textcolor{red}{S_z}) \\
+         &(1, \textcolor{green}{S_z}) \}.
+\end{align*}
+Note that while most results are deterministic, the second and fourth bit measured are random, as
+A`s and B`s basis do not match for those bits.
+
+In the last step, A and B compare their chosen bases over the authenticated channel. Both parties
+discard the bits where the basis did not match; the remaining bits will form the key. In our case
+that would lead to the key
+\begin{equation}
+  K = 111_2.
+\end{equation}
+
+To check for an eavesdropper, A and B can exchange a section of the key, to see if it matches, where
+an eavesdropper would have no higher chance then guessing, i.e. $\frac{1}{2^n}$ for $n$ bits in this
+test.
 
