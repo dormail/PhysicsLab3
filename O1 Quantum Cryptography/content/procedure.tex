@@ -1,7 +1,7 @@
 \section{Procedure}
 \label{sec:procedure}
 The optical arrangement is sketched in \autoref{fig:setup} and will be explained in the following
-paragraphs.
+paragraphs. 
 
 \begin{figure}
   \centering
@@ -43,3 +43,34 @@ paragraphs.
   the initial polarization of the laser.}
   \label{fig:setup}
 \end{figure}
+
+The setup can be split up in the sender`s side and the receiving part. The laser and polarizing
+rotator send a beam with a fixed polarization. The rotator can be set to four angles referring to
+the four possible combinations of bits and bases. As a convention we will use the convention listed
+in \autoref{tab:bit-encoding}.
+
+\begin{table}
+  \centering
+  \caption{Encoding of a (bit, base) tuple as polarizing angle at the first rotating polarizer.}
+  \label{tab:bit-encoding}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c}
+    Bit & Base & Angle \\
+    \hline
+    0 & $Z$ & $0^\circ$ \\
+    1 & $Z$ & $90^\circ$ \\
+    0 & $X$ & $-45^\circ$ \\
+    1 & $X$ & $45^\circ$ \\
+  \end{tabular}
+\end{table}
+
+The second polarizer then has two positions, $0^\circ$ and $45^\circ$ corresponing to $Z$ and $X$
+base. 
+
+For the initial setup, the laser pointer has to be rotated such that one detector has a maximal
+intensity without the rotating polarizers. This detector is then the ``0`` detector.
+
+For sending and receiving the angles then have to be adjusted as explained and the detector
+controller has to be put in the adjust mode, the LED on the control unit should appear green. With
+those settings, a LED on the detector with stronger intensity ligths up, which will be the detected
+``0`` or ``1``.
