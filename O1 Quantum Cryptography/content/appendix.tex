@@ -1,0 +1,42 @@
+\section{Letter encoding}
+\label{sec:letter-encoding}
+The letters get encoded by converting their index in a binary representation. To encode 26 letters,
+the number of bits $n$ has to be so larger, such that $2^n \geq 26$, the smallest $n$ turns out to
+be $5$. The whole scheme is shown in \autoref{tab:letter-encoding}, leaving only $6$ possible bits
+empty.
+
+\begin{table}
+  \centering
+  \caption{Binary representation of the alphabet, taken from \cite{thor_manual}.}
+  \label{tab:letter-encoding}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c | c c c c c}
+    A & 0 & 0 & 0 & 0 & 0 \\
+    B & 0 & 0 & 0 & 0 & 1 \\
+    C & 0 & 0 & 0 & 1 & 0 \\
+    D & 0 & 0 & 0 & 1 & 1 \\
+    E & 0 & 0 & 1 & 0 & 0 \\
+    F & 0 & 0 & 1 & 0 & 1 \\
+    G & 0 & 0 & 1 & 1 & 0 \\
+    H & 0 & 0 & 1 & 1 & 1 \\
+    I & 0 & 1 & 0 & 0 & 0 \\
+    J & 0 & 1 & 0 & 0 & 1 \\
+    K & 0 & 1 & 0 & 1 & 0 \\
+    L & 0 & 1 & 0 & 1 & 1 \\
+    M & 0 & 1 & 1 & 0 & 0 \\
+    N & 0 & 1 & 1 & 0 & 1 \\
+    O & 0 & 1 & 1 & 1 & 0 \\
+    P & 0 & 1 & 1 & 1 & 1 \\
+    Q & 1 & 0 & 0 & 0 & 0 \\
+    R & 1 & 0 & 0 & 0 & 1 \\
+    S & 1 & 0 & 0 & 1 & 0 \\
+    T & 1 & 0 & 0 & 1 & 1 \\
+    U & 1 & 0 & 1 & 0 & 0 \\
+    V & 1 & 0 & 1 & 0 & 1 \\
+    W & 1 & 0 & 1 & 1 & 0 \\
+    X & 1 & 0 & 1 & 1 & 1 \\
+    Y & 1 & 1 & 0 & 0 & 0 \\
+    Z & 1 & 1 & 0 & 0 & 1 \\
+  \end{tabular}
+\end{table}
+

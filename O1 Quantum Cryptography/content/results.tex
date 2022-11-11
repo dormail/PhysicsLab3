@@ -1,2 +1,121 @@
 \section{Results}
 \label{sec:results}
+
+\subsection{Key exchange}
+\label{sec:Key exchange without Eve}
+The initially generated sequence and measurement basis are shown in
+\autoref{tab:res:initial-sequence}. As a second step the parties compare their bases via a non
+quantum channel, which has been included as the basis match column. Leaving out the eavesdropper
+detection, we gained the five bit key
+\begin{equation}
+  \text{Key} = 00111_2.
+  \label{eqn:res:key}
+\end{equation}
+As a basis we will continue using the bases from the key bits
+\begin{equation}
+  \text{Basis} = (Z, Z, Z, Z, X). 
+\end{equation}
+
+\begin{table}
+  \centering
+  \caption{Pseudo randomly generated bit and basis for A and B. The basis columns already contain
+  the angle for encoding the bit in the A basis.}
+  \label{tab:res:initial-sequence}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c | c | c | c | c}
+    Bit & A angle & B basis & Result & Basis match \\
+    \hline
+    0 & 0 & 0 & 0 & Y \\
+    0 & -45 & 0 & 1 & N \\
+    1 & 90 & 45 & 0 & N \\
+    0 & 0 & 0 & 0 & Y \\
+    1 & 45 & 0 & 1 & N \\
+    1 & 90 & 0 & 1 & Y \\
+    0 & 0 & 0 & 1 & N \\
+    1 & 90 & 0 & 1 & Y \\
+    1 & 45 & 45 & 1 & Y \\
+    0 & -45 & 0 & 0 & N \\
+  \end{tabular}
+\end{table}
+
+\subsection{Sending a message with an eavesdropper}
+\label{sec:Sending a message without an eavesdropper}
+In the following part we will show the transmission of the five letter word ``KAIST`` via our
+secured quantum channel. Using the encoding scheme explained in \autoref{sec:letter-encoding} 
+and the encryption using a XOR operation, we get 
+\begin{align}
+  M_2 &= \underbrace{01010}_{K} \, 
+  \underbrace{00000}_{A} \,
+  \underbrace{01000}_{I} \, 
+  \underbrace{10010}_{S} \, 
+  \underbrace{10011_2}_{T} \\
+  M_{2, \text{encr}} &= 01101 \, 00111 \, 01111 \, 10101 \, 10100_2.
+\end{align}
+This message is sent through a quantum channel with an eavesdropper who has to guess the basis and
+measures the signal, afterwards he sends the measured quantum information to party B. The angles and
+measured signals are shown in \autoref{tab:res:sending-sequence}.
+
+\begin{table}
+  \centering
+  \caption{Results of sending a message through an eavesdropper (E). The basis for E has been
+  pseudorandmly generated. The angle corresponds to the bit to be sent in the specific basis or the
+basis of measurement.}
+  \label{tab:res:sending-sequence}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c | c | c | c | c | c | c}
+    A bit &
+    A angle &
+    E R angle &
+    E bit &
+    E T angle &
+    B basis &
+    B bit \\
+    \hline
+    0&0&45&1&45&0&1 \\
+    1&90&0&1&90&0&1 \\
+    1&90&0&1&90&0&1 \\
+    0&0&45&1&45&0&1 \\
+    1&45&45&1&45&45&1 \\
+    0&0&45&1&45&0&0 \\
+    0&0&0&0&0&0&0 \\
+    1&90&0&1&90&0&1 \\
+    1&90&45&1&45&0&0  \\
+    1&45&45&1&45&45&1 \\
+    0&0&45&1&45&0&1 \\
+    1&90&45&1&45&0&0  \\
+    1&90&45&1&45&0&1  \\
+    1&90&45&0&-45&0&0 \\
+    1&45&45&1&45&45&1 \\
+    1&90&0&1&90&0&1 \\
+    0&0&0&0&0&0&0 \\
+    1&90&0&1&90&0&1 \\
+    1&90&45&1&45&0&1  \\
+    1&90&45&0&-45&0&0 \\
+    1&45&45&1&45&45&1 \\
+    1&90&0&1&90&0&1 \\
+    0&0&0&0&0&0&0 \\
+    1&90&0&1&90&0&1 \\
+    0&0&0&0&0&0&0 \\
+    1&45&45&1&45&45&1 \\
+    1&90&45&0&-45&0&0 \\
+    0&0&0&0&0&0&0 \\
+    1&90&45&0&-45&0&1 \\
+    0&0&0&0&0&0&0 \\
+    0&-45&0&0&0&45&1  \\
+  \end{tabular}
+\end{table}
+
+This gives a detected message at Bob`s party
+\begin{align}
+  M_{2, \text{encr}} &= 11111 \, 
+                        00101 \,
+                        10101 \,
+                        10101 \,
+                        00101 \\
+  M_{2} &= \underbrace{11000}_{Y} \, 
+           \underbrace{00010}_{C} \,
+           \underbrace{10010}_{S} \,
+           \underbrace{10010}_{S} \,
+           \underbrace{00010}_{C}
+  \label{eqn:final_message}
+\end{align}

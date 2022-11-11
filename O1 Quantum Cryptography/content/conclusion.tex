@@ -1,2 +1,24 @@
 \section{Conclusion}
 \label{sec:conclusion}
+In this experiment a quantum key exchange and transmission have been implemented using optical
+polairzation states.
+
+An eavesdropper has been detected through a low fidelity of the transmission, leading to a channel
+indistiguishable from random bits.
+
+Important to note is that this setup can not be used in the real world, since the no-cloning
+theorem only works for individual photons. Since an optical beam contains an abundance of photons,
+an eavesdropper can perform a measurement on only a small amount photons. With multiple
+measurements, he can even guess the basis correctly then. An ideal implementation therefore would
+use one photon per (qu-)bit, such that an eavesdropper can not do partial measurements.
+
+Furthermore, this protocol can be improved by introducing parity bits. As it can be seen in
+\autoref{tab:letter-encoding}, a measurement of $11010_2$ and above would leed to undefined
+decodings. Even though it did not appear in our measurement, on average $18.75\%$ of bit signal
+could not be decoded to letters. This error detection can be imporoved by introducing parity bits or
+check sums, leading to higher detecting rates with minimal overhead.
+
+Lastly, tests can be done on the actual key exchange with an eavesdropper, 
+where the BB84 is supposed to fail due to the disturbance because of the eavesdropper performing
+measurements.
+
