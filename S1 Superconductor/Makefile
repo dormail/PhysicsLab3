@@ -1,12 +1,14 @@
 all: build/main.pdf
 
 # Sample on how to include python scripts
-build/conductivity_example.pdf: conductivity_example.py matplotlibrc header-matplotlib.tex build
+build/conductivity_example.pdf: conductivity_example.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python3 conductivity_example.py
-#
+
+build/resistance-temperature.pdf: resistance-temperature.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python3 resistance-temperature.py
+
 build/main.pdf: build/conductivity_example.pdf
-
-
+build/main.pdf: build/resistance-temperature.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
