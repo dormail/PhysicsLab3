@@ -1,0 +1,42 @@
+\section{Finding $T_C$}
+\label{sec:Finding $T_C$}
+To find the critical temperature $T_C$ based on our experimental data, the curve fit from the scipy
+library will be used, hence the challenge is finding an appropriate fit function and initial
+condition.
+
+The critical behaviour is modelled through an arcus tangens function
+\begin{equation}
+  R_\text{crit}(T) = A \arctan\left( (T - T_C) \cdot s\right)
+\end{equation}
+where $T_C$ corresponds to the critical temperature, $s$ is a parameter controlling the abruptness
+of the critical behaviour when $T \approx T_C$. $A$ refers to the amplitude of the critical jump.
+Since $R$ shows a linear behaviour when the temperature is not close to the critical point, we add
+a linear function
+\begin{equation}
+  R_\text{lin}(T) = m\cdot T + b,
+\end{equation}
+where $m$ and $b$ are simple coefficients with no deeper meaning for our work. This gives the fit
+function
+\begin{equation}
+  R(T) = m\cdot T + b + A \arctan\left( (T - T_C) \cdot s\right).
+\end{equation}
+The initial values of the parameters for the optimizer have been estimated visually and are given in
+\autoref{tab:fitparams}.
+
+\begin{table}
+  \centering
+  \caption{Initial values $p_0$ of the fit parameters for the fit function explained in
+  \autoref{sec:Finding $T_C$}.}
+  \label{tab:fitparams}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c}
+    Parameter & $p_0^\text{cooling}$ & $p_0^\text{heating}$ \\
+    \hline
+    $m$ & 0.0001 & 0.0001 \\
+    $b$ & 0 & 0 \\ 
+    $A$ & 0.001 & 0.001 \\
+    $s$ & 100 & 100 \\
+    $T_C$ & 70 & 100
+  \end{tabular}
+\end{table}
+
