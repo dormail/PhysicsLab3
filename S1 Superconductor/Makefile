@@ -7,6 +7,10 @@ build/conductivity_example.pdf: conductivity_example.py matplotlibrc header-matp
 build/resistance-temperature.pdf: resistance-temperature.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python3 resistance-temperature.py
 
+build/fit_heating.pdf: critical_temperature.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python3 critical_temperature.py
+
+build/main.pdf: build/fit_heating.pdf
 build/main.pdf: build/conductivity_example.pdf
 build/main.pdf: build/resistance-temperature.pdf
 
