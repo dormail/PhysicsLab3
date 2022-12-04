@@ -28,9 +28,9 @@ T_heat = np.array(heating['Temperature(K)'])
 resistance_heat = np.array(heating['Resistance(Ohm)'])
 
 # plotting
-plt.scatter(T_cool,resistance_cool, label='Resistance (Ohm) cooling', marker='.',
+plt.scatter(T_cool,resistance_cool, label='Resistance cooling', marker='.',
            alpha=.3)
-plt.scatter(T_heat,resistance_heat, label='Resistance (Ohm) heating', marker='.',
+plt.scatter(T_heat,resistance_heat, label='Resistance heating', marker='.',
            alpha=.3)
 #plt.scatter(t,T, label='Temperatur (K)')
 plt.legend()
