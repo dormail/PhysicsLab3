@@ -49,7 +49,7 @@ print(f'T_C during cooling process: {T_C_unc}')
 
 T = np.linspace(50,300,1000)
 
-plt.scatter(T_cool,resistance_cool, label='Resistance (Ohm) cooling', marker='.',
+plt.scatter(T_cool,resistance_cool, label='Experimental data cooling', marker='.',
            alpha=.2)
 
 plt.plot(T, fit_fun(T, m, b, A, s, T_C), c='k', label='Fit function')
@@ -76,7 +76,7 @@ print(f'T_C during heating process: {T_C_unc}')
 
 T = np.linspace(50,300,1000)
 
-plt.scatter(T_heat,resistance_heat, label='Resistance (Ohm) heating', marker='.',
+plt.scatter(T_heat,resistance_heat, label='Experimental data heating', marker='.',
            alpha=.2)
 
 plt.plot(T, fit_fun(T, m, b, A, s, T_C), c='k', label='Fit function')

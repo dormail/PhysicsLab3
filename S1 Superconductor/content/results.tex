@@ -12,12 +12,13 @@ nitrogen.
 \subsection{Measuring low temperature resistance}
 \label{sec:Measuring low temperature resistance}
 The sample with the measuring probes and circuit has been cooled down to $\SI{50}{K}$. A computer
-attached to the setup up measured the temperature and resistance once every 2.5 seconds. The
-function $R(T)$ is plotted for both runs in \label{fig:R-T}.
+attached to the setup measured the temperature and resistance once every 2.5 seconds. The
+function $R(T)$ is plotted for both runs in \autoref{fig:R-T}.
 \begin{figure}
   \centering
   \includegraphics[width=.5\textwidth]{build/resistance-temperature.pdf}
-  \caption{Sample plot for the conductivity of a superconductor.}
+  \caption{Resistance measurement results for both cooling and heating. Noteworthy is the critical
+  behavior below $\SI{100}{K}$ and the exact critical point being different for both runs.}
   \label{fig:R-T}
 \end{figure}
 To calculate the critical temperature we used the curve fit as introduced in 
@@ -26,8 +27,8 @@ To calculate the critical temperature we used the curve fit as introduced in
   T_C^\text{cool} &= (83.729 \pm 0.011) \, \text{K}, \\
   T_C^\text{heat} &= (90.47 \pm 0.14) \, \text{K}.
 \end{align}
-The uncertainties have been calculated using the covariance matrix of the curve fit. The fits and
-data are shown together in \autoref{fig:fits}.
+The uncertainties have been calculated using the covariance matrix of the curve fit. Both fits and
+datasets are shown in \autoref{fig:fits}.
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.5\textwidth}
