@@ -1,2 +1,79 @@
 \section{Results}
 \label{sec:results}
+
+\subsection{Determining the wavelength of the xray source}
+\label{sec:res:wavelength}
+The wavelength has been determined in two runs, the first being a test if the machine has been set
+up properly and the second going over the meaningful range of $\theta$. The raw data for both runs
+is shown in \autoref{fig:nacl}. The peak has its center at
+\[
+  \theta = 5.5^\circ,
+\]
+using the Bragg condition the wavelength turns out to be
+\begin{equation}
+  \lambda_1 = 2d \sin(\theta) = \SI{54.06}{pm}.
+\end{equation}
+Here we assumed a first order reflection and a spacing $d = \SI{282.01}{pm}$ as given in the manual
+\cite{leybold_manual1}.
+
+There is also a slight second order reflection visible at $\theta = 13.1^\circ$, where one can
+calculate
+\begin{equation}
+  \lambda_2 = \SI{63.92}{pm}.
+\end{equation}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{build/NaCl2.pdf}
+    \label{fig:nacl_calib}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{build/NaCl1.pdf}
+    \label{fig:nacl}
+  \end{subfigure}
+  \caption{Measuring the x-ray reflection of NaCl in two runs.}
+  \label{fig:nacl}
+\end{figure}
+
+\subsection{Determining the lattice constant of LiF and Ti}
+\label{sec:res:d}
+The method used in the last section can now be used to measure lattice constants. For the
+calculations we will use the given wavelength in the manual. 
+
+For both materials we did one full run after multiple calibration runs. The first runs only gave bad
+results with no peaks visible. \autoref{fig:lattice_constants} shows the reflection intensity for
+LiF and Ti.
+
+We found the glance angles to be
+\begin{align}
+  \lambda^\text{Ti} &= 8.1^\circ \\
+  \lambda^\text{LiF} &= 7.9^\circ.
+\end{align}
+Assuming first order reflections, we get lattice constants
+\begin{align}
+  &K_\alpha: & a_0^\text{Ti} &= \SI{517.15}{pm} & a_0^\text{LiF} &= \SI{504.47}{pm} \\
+  &K_\beta: & a_0^\text{Ti} &= \SI{459.02}{pm} & a_0^\text{LiF} &= \SI{447.76}{pm} \\
+\end{align}
+since we only saw one peak we can not savely determine wether it is a $K_\alpha$ or $K_\alpha$ beam.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{build/LiF.pdf}
+    \label{fig:lif}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{build/Ti.pdf}
+    \label{fig:ti}
+  \end{subfigure}
+  \caption{Measuring the x-ray reflection of LiF (top) and Ti (bottom) to
+  determine their lattice constants.}
+  \label{fig:lattice_constants}
+\end{figure}
