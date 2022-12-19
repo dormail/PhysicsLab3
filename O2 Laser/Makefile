@@ -4,9 +4,11 @@ all: build/main.pdf
 build/intensity.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python3 plot.py  
 
+build/spectrum.pdf: spectroscopy.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python3 spectroscopy.py
+
 build/main.pdf: build/intensity.pdf
-
-
+build/main.pdf: build/spectrum.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
