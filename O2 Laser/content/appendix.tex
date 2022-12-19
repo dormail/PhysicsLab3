@@ -1,0 +1,17 @@
+\section{Cleaning the spectrum}
+\label{sec:cleaning}
+To clean the spectral measurement from background noise, such as light or digital displays used, we
+introduced a noise cancelling inspired approach, where we performed the same measurement with and
+without tha He-Ne power supply turned on. It is important to not move the spectrometer in between
+the measurements. 
+
+The two signals can then be subtracted from each other, as it is shown in \autoref{fig:cleaning}.
+Afterwards the signal can be normalized.
+\begin{figure*}
+  \centering
+  \includegraphics{build/spectrum_clean.pdf}
+  \caption{Visualization of background noise removal. The clean signal is the measured spectrum of
+  the laser minus the background.}
+  \label{fig:cleaning}
+\end{figure*}
+

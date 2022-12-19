@@ -1,17 +1,38 @@
 \section{Results}
 \label{sec:results}
+Following the steps provided in the last section, we achieved to get a laser oscillation. We were
+able to drag out the mirrors up to approximately $\SI{135}{cm}$, only $\SI{5}{cm}$ below the
+theoretical limit of $\SI{140}{cm}$ due to the curvature radii of the mirrors. This laser has been
+analysed further, which we will present in this section.
+
+\subsection{Spectrum of laser}
+\label{sec:Spectrum of laser}
+Using a spectrometer, we measured the optical spectrum of the laser, which is shown in
+\autoref{fig:spectrum}. There is a clear peak at
+\begin{equation}
+  \lambda = \SI{634}{nm}.
+\end{equation}
+To clean the spectrum from background, we used the procedure explained in \autoref{sec:cleaning}.
+
+\begin{figure*}
+  \centering
+  \includegraphics{build/spectrum.pdf}
+  \caption{Spectrum of the He-Ne laser, after clean up. The highest intensity has been measured at $\SI{634}{nm}$
+  and the data has been normalized to this value.}
+  \label{fig:spectrum}
+\end{figure*}
+
+\subsection{Dependence on tube current}
+\label{sec:Dependence on tube current}
+After finding the peak in the spectrum, we can measure the dependency of the intensity on the
+current flowing through the tube. We used the full range the power suply offered, going from
+$\SI{5}{mA}$ to $\SI{6.5}{mA}$ in $\SI{0.1}{mA}$ steps. For each data point, we recorded the
+relative intensity at the peak found in the step before. The results are shown in
+\autoref{fig:intensity}. A clear trend downwards can be seen when going above $\SI{5.8}{mA}$.
 
 \begin{figure*}
   \centering
   \includegraphics{build/intensity.pdf}
   \caption{Laser intensity measured vs. tube current.}
-  \label{fig:intensity}
-\end{figure*}
-
-\begin{figure*}
-  \centering
-  \includegraphics{build/spectrum.pdf}
-  \caption{Spectrum of the He-Ne Laser. The highest intensity has been measured at $\SI{634}{pm}$
-  and the data has been normalized to this value.}
   \label{fig:intensity}
 \end{figure*}

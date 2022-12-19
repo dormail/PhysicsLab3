@@ -12,7 +12,7 @@ I = data['I']
 I = I / np.max(I)
 
 plt.xlabel(r'Laser current / mA')
-plt.ylabel(r'Laser intensity / relative units')
+plt.ylabel(r'Relative intensity')
 
 plt.scatter(current, I, marker='+')
 plt.savefig('build/intensity.pdf')
